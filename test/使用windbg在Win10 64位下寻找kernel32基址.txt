@@ -1,0 +1,429 @@
+0:000> !teb
+TEB at 00007ff74ab4d000
+    ExceptionList:        0000000000000000
+    StackBase:            000000b502c30000
+    StackLimit:           000000b502c2c000
+    SubSystemTib:         0000000000000000
+    FiberData:            0000000000001e00
+    ArbitraryUserPointer: 0000000000000000
+    Self:                 00007ff74ab4d000
+    EnvironmentPointer:   0000000000000000
+    ClientId:             0000000000002110 . 00000000000017ac
+    RpcHandle:            0000000000000000
+    Tls Storage:          000000b502d6b740
+    PEB Address:          00007ff74ab4f000
+    LastErrorValue:       0
+    LastStatusValue:      0
+    Count Owned Locks:    0
+    HardErrorMode:        0
+0:000> dt 00007ff74ab4d000 _teb
+ntdll!_TEB
+   +0x000 NtTib            : _NT_TIB
+   +0x038 EnvironmentPointer : (null) 
+   +0x040 ClientId         : _CLIENT_ID
+   +0x050 ActiveRpcHandle  : (null) 
+   +0x058 ThreadLocalStoragePointer : 0x000000b5`02d6b740 Void
+   +0x060 ProcessEnvironmentBlock : 0x00007ff7`4ab4f000 _PEB
+   +0x068 LastErrorValue   : 0
+   +0x06c CountOfOwnedCriticalSections : 0
+   +0x070 CsrClientThread  : (null) 
+   +0x078 Win32ThreadInfo  : (null) 
+   +0x080 User32Reserved   : [26] 0
+   +0x0e8 UserReserved     : [5] 0
+   +0x100 WOW32Reserved    : (null) 
+   +0x108 CurrentLocale    : 0x804
+   +0x10c FpSoftwareStatusRegister : 0
+   +0x110 ReservedForDebuggerInstrumentation : [16] (null) 
+   +0x190 SystemReserved1  : [38] (null) 
+   +0x2c0 ExceptionCode    : 0n0
+   +0x2c4 Padding0         : [4]  ""
+   +0x2c8 ActivationContextStackPointer : 0x000000b5`02d60850 _ACTIVATION_CONTEXT_STACK
+   +0x2d0 InstrumentationCallbackSp : 0
+   +0x2d8 InstrumentationCallbackPreviousPc : 0
+   +0x2e0 InstrumentationCallbackPreviousSp : 0
+   +0x2e8 TxFsContext      : 0xfffe
+   +0x2ec InstrumentationCallbackDisabled : 0 ''
+   +0x2ed Padding1         : [3]  ""
+   +0x2f0 GdiTebBatch      : _GDI_TEB_BATCH
+   +0x7d8 RealClientId     : _CLIENT_ID
+   +0x7e8 GdiCachedProcessHandle : (null) 
+   +0x7f0 GdiClientPID     : 0
+   +0x7f4 GdiClientTID     : 0
+   +0x7f8 GdiThreadLocalInfo : (null) 
+   +0x800 Win32ClientInfo  : [62] 0
+   +0x9f0 glDispatchTable  : [233] (null) 
+   +0x1138 glReserved1      : [29] 0
+   +0x1220 glReserved2      : (null) 
+   +0x1228 glSectionInfo    : (null) 
+   +0x1230 glSection        : (null) 
+   +0x1238 glTable          : (null) 
+   +0x1240 glCurrentRC      : (null) 
+   +0x1248 glContext        : (null) 
+   +0x1250 LastStatusValue  : 0
+   +0x1254 Padding2         : [4]  ""
+   +0x1258 StaticUnicodeString : _UNICODE_STRING ""
+   +0x1268 StaticUnicodeBuffer : [261]  ""
+   +0x1472 Padding3         : [6]  ""
+   +0x1478 DeallocationStack : 0x000000b5`02bb0000 Void
+   +0x1480 TlsSlots         : [64] (null) 
+   +0x1680 TlsLinks         : _LIST_ENTRY [ 0x00000000`00000000 - 0x00000000`00000000 ]
+   +0x1690 Vdm              : (null) 
+   +0x1698 ReservedForNtRpc : (null) 
+   +0x16a0 DbgSsReserved    : [2] (null) 
+   +0x16b0 HardErrorMode    : 0
+   +0x16b4 Padding4         : [4]  ""
+   +0x16b8 Instrumentation  : [11] (null) 
+   +0x1710 ActivityId       : _GUID {00000000-0000-0000-0000-000000000000}
+   +0x1720 SubProcessTag    : (null) 
+   +0x1728 PerflibData      : (null) 
+   +0x1730 EtwTraceData     : (null) 
+   +0x1738 WinSockData      : (null) 
+   +0x1740 GdiBatchCount    : 0
+   +0x1744 CurrentIdealProcessor : _PROCESSOR_NUMBER
+   +0x1744 IdealProcessorValue : 0
+   +0x1744 ReservedPad0     : 0 ''
+   +0x1745 ReservedPad1     : 0 ''
+   +0x1746 ReservedPad2     : 0 ''
+   +0x1747 IdealProcessor   : 0 ''
+   +0x1748 GuaranteedStackBytes : 0
+   +0x174c Padding5         : [4]  ""
+   +0x1750 ReservedForPerf  : (null) 
+   +0x1758 ReservedForOle   : (null) 
+   +0x1760 WaitingOnLoaderLock : 0
+   +0x1764 Padding6         : [4]  ""
+   +0x1768 SavedPriorityState : (null) 
+   +0x1770 ReservedForCodeCoverage : 0
+   +0x1778 ThreadPoolData   : (null) 
+   +0x1780 TlsExpansionSlots : (null) 
+   +0x1788 DeallocationBStore : (null) 
+   +0x1790 BStoreLimit      : (null) 
+   +0x1798 MuiGeneration    : 0
+   +0x179c IsImpersonating  : 0
+   +0x17a0 NlsCache         : (null) 
+   +0x17a8 pShimData        : (null) 
+   +0x17b0 HeapVirtualAffinity : 0
+   +0x17b2 LowFragHeapDataSlot : 0
+   +0x17b4 Padding7         : [4]  ""
+   +0x17b8 CurrentTransactionHandle : (null) 
+   +0x17c0 ActiveFrame      : (null) 
+   +0x17c8 FlsData          : (null) 
+   +0x17d0 PreferredLanguages : (null) 
+   +0x17d8 UserPrefLanguages : (null) 
+   +0x17e0 MergedPrefLanguages : (null) 
+   +0x17e8 MuiImpersonation : 0
+   +0x17ec CrossTebFlags    : 0
+   +0x17ec SpareCrossTebBits : 0y0000000000000000 (0)
+   +0x17ee SameTebFlags     : 0x1420
+   +0x17ee SafeThunkCall    : 0y0
+   +0x17ee InDebugPrint     : 0y0
+   +0x17ee HasFiberData     : 0y0
+   +0x17ee SkipThreadAttach : 0y0
+   +0x17ee WerInShipAssertCode : 0y0
+   +0x17ee RanProcessInit   : 0y1
+   +0x17ee ClonedThread     : 0y0
+   +0x17ee SuppressDebugMsg : 0y0
+   +0x17ee DisableUserStackWalk : 0y0
+   +0x17ee RtlExceptionAttached : 0y0
+   +0x17ee InitialThread    : 0y1
+   +0x17ee SessionAware     : 0y0
+   +0x17ee LoadOwner        : 0y1
+   +0x17ee LoaderWorker     : 0y0
+   +0x17ee SpareSameTebBits : 0y00
+   +0x17f0 TxnScopeEnterCallback : (null) 
+   +0x17f8 TxnScopeExitCallback : (null) 
+   +0x1800 TxnScopeContext  : (null) 
+   +0x1808 LockCount        : 0
+   +0x180c WowTebOffset     : 0n0
+   +0x1810 ResourceRetValue : (null) 
+   +0x1818 ReservedForWdf   : (null) 
+   +0x1820 ReservedForCrt   : 0
+   +0x1828 EffectiveContainerId : _GUID {00000000-0000-0000-0000-000000000000}
+0:000> dt 0x00007ff7`4ab4f000 _PEB
+ntdll!_PEB
+   +0x000 InheritedAddressSpace : 0 ''
+   +0x001 ReadImageFileExecOptions : 0 ''
+   +0x002 BeingDebugged    : 0x1 ''
+   +0x003 BitField         : 0x4 ''
+   +0x003 ImageUsesLargePages : 0y0
+   +0x003 IsProtectedProcess : 0y0
+   +0x003 IsImageDynamicallyRelocated : 0y1
+   +0x003 SkipPatchingUser32Forwarders : 0y0
+   +0x003 IsPackagedProcess : 0y0
+   +0x003 IsAppContainer   : 0y0
+   +0x003 IsProtectedProcessLight : 0y0
+   +0x003 SpareBits        : 0y0
+   +0x004 Padding0         : [4]  ""
+   +0x008 Mutant           : 0xffffffff`ffffffff Void
+   +0x010 ImageBaseAddress : 0x00007ff7`4b7d0000 Void
+   +0x018 Ldr              : 0x00007ffb`162461c0 _PEB_LDR_DATA
+   +0x020 ProcessParameters : 0x000000b5`02d618e0 _RTL_USER_PROCESS_PARAMETERS
+   +0x028 SubSystemData    : (null) 
+   +0x030 ProcessHeap      : 0x000000b5`02d60000 Void
+   +0x038 FastPebLock      : 0x00007ffb`16245e40 _RTL_CRITICAL_SECTION
+   +0x040 AtlThunkSListPtr : (null) 
+   +0x048 IFEOKey          : (null) 
+   +0x050 CrossProcessFlags : 3
+   +0x050 ProcessInJob     : 0y1
+   +0x050 ProcessInitializing : 0y1
+   +0x050 ProcessUsingVEH  : 0y0
+   +0x050 ProcessUsingVCH  : 0y0
+   +0x050 ProcessUsingFTH  : 0y0
+   +0x050 ReservedBits0    : 0y000000000000000000000000000 (0)
+   +0x054 Padding1         : [4]  ""
+   +0x058 KernelCallbackTable : (null) 
+   +0x058 UserSharedInfoPtr : (null) 
+   +0x060 SystemReserved   : [1] 0
+   +0x064 AtlThunkSListPtr32 : 0
+   +0x068 ApiSetMap        : 0x000000b5`02b90000 Void
+   +0x070 TlsExpansionCounter : 0
+   +0x074 Padding2         : [4]  ""
+   +0x078 TlsBitmap        : 0x00007ffb`16246260 Void
+   +0x080 TlsBitmapBits    : [2] 0x10011
+   +0x088 ReadOnlySharedMemoryBase : 0x00007ff7`4aa10000 Void
+   +0x090 SparePvoid0      : (null) 
+   +0x098 ReadOnlyStaticServerData : 0x00007ff7`4aa10720  -> (null) 
+   +0x0a0 AnsiCodePageData : 0x00007ff7`4ab10000 Void
+   +0x0a8 OemCodePageData  : 0x00007ff7`4ab10000 Void
+   +0x0b0 UnicodeCaseTableData : 0x00007ff7`4ab40028 Void
+   +0x0b8 NumberOfProcessors : 4
+   +0x0bc NtGlobalFlag     : 0x70
+   +0x0c0 CriticalSectionTimeout : _LARGE_INTEGER 0xffffe86d`079b8000
+   +0x0c8 HeapSegmentReserve : 0x100000
+   +0x0d0 HeapSegmentCommit : 0x2000
+   +0x0d8 HeapDeCommitTotalFreeThreshold : 0x10000
+   +0x0e0 HeapDeCommitFreeBlockThreshold : 0x1000
+   +0x0e8 NumberOfHeaps    : 2
+   +0x0ec MaximumNumberOfHeaps : 0x10
+   +0x0f0 ProcessHeaps     : 0x00007ffb`16244a80  -> 0x000000b5`02d60000 Void
+   +0x0f8 GdiSharedHandleTable : (null) 
+   +0x100 ProcessStarterHelper : (null) 
+   +0x108 GdiDCAttributeList : 0
+   +0x10c Padding3         : [4]  ""
+   +0x110 LoaderLock       : 0x00007ffb`162430b0 _RTL_CRITICAL_SECTION
+   +0x118 OSMajorVersion   : 0xa
+   +0x11c OSMinorVersion   : 0
+   +0x120 OSBuildNumber    : 0x2800
+   +0x122 OSCSDVersion     : 0
+   +0x124 OSPlatformId     : 2
+   +0x128 ImageSubsystem   : 2
+   +0x12c ImageSubsystemMajorVersion : 6
+   +0x130 ImageSubsystemMinorVersion : 0
+   +0x134 Padding4         : [4]  ""
+   +0x138 ActiveProcessAffinityMask : 0xf
+   +0x140 GdiHandleBuffer  : [60] 0
+   +0x230 PostProcessInitRoutine : (null) 
+   +0x238 TlsExpansionBitmap : 0x00007ffb`16246280 Void
+   +0x240 TlsExpansionBitmapBits : [32] 1
+   +0x2c0 SessionId        : 7
+   +0x2c4 Padding5         : [4]  ""
+   +0x2c8 AppCompatFlags   : _ULARGE_INTEGER 0x0
+   +0x2d0 AppCompatFlagsUser : _ULARGE_INTEGER 0x0
+   +0x2d8 pShimData        : 0x000000b5`02c50000 Void
+   +0x2e0 AppCompatInfo    : (null) 
+   +0x2e8 CSDVersion       : _UNICODE_STRING ""
+   +0x2f8 ActivationContextData : 0x000000b5`02c40000 _ACTIVATION_CONTEXT_DATA
+   +0x300 ProcessAssemblyStorageMap : 0x000000b5`02d6c6c0 _ASSEMBLY_STORAGE_MAP
+   +0x308 SystemDefaultActivationContextData : 0x000000b5`02c30000 _ACTIVATION_CONTEXT_DATA
+   +0x310 SystemAssemblyStorageMap : (null) 
+   +0x318 MinimumStackCommit : 0
+   +0x320 FlsCallback      : (null) 
+   +0x328 FlsListHead      : _LIST_ENTRY [ 0x00007ff7`4ab4f328 - 0x00007ff7`4ab4f328 ]
+   +0x338 FlsBitmap        : 0x00007ffb`162462d0 Void
+   +0x340 FlsBitmapBits    : [4] 1
+   +0x350 FlsHighIndex     : 0
+   +0x358 WerRegistrationData : (null) 
+   +0x360 WerShipAssertPtr : (null) 
+   +0x368 pUnused          : (null) 
+   +0x370 pImageHeaderHash : (null) 
+   +0x378 TracingFlags     : 0
+   +0x378 HeapTracingEnabled : 0y0
+   +0x378 CritSecTracingEnabled : 0y0
+   +0x378 LibLoaderTracingEnabled : 0y0
+   +0x378 SpareTracingBits : 0y00000000000000000000000000000 (0)
+   +0x37c Padding6         : [4]  ""
+   +0x380 CsrServerReadOnlySharedMemoryBase : 0x00007ff6`fb380000
+0:000> dt 0x00007ffb`162461c0 _PEB_LDR_DATA
+ntdll!_PEB_LDR_DATA
+   +0x000 Length           : 0x58
+   +0x004 Initialized      : 0x1 ''
+   +0x008 SsHandle         : (null) 
+   +0x010 InLoadOrderModuleList : _LIST_ENTRY [ 0x000000b5`02d62470 - 0x000000b5`02d6e310 ]
+   +0x020 InMemoryOrderModuleList : _LIST_ENTRY [ 0x000000b5`02d62480 - 0x000000b5`02d6e320 ]
+   +0x030 InInitializationOrderModuleList : _LIST_ENTRY [ 0x000000b5`02d622c0 - 0x000000b5`02d629c0 ]
+   +0x040 EntryInProgress  : (null) 
+   +0x048 ShutdownInProgress : 0 ''
+   +0x050 ShutdownThreadId : (null) 
+0:000> dt 0x000000b5`02d62470 _LDR_DATA_TABLE_ENTRY
+ntdll!_LDR_DATA_TABLE_ENTRY
+   +0x000 InLoadOrderLinks : _LIST_ENTRY [ 0x000000b5`02d622a0 - 0x00007ffb`162461d0 ]
+   +0x010 InMemoryOrderLinks : _LIST_ENTRY [ 0x000000b5`02d622b0 - 0x00007ffb`162461e0 ]
+   +0x020 InInitializationOrderLinks : _LIST_ENTRY [ 0x00000000`00000000 - 0x00000000`00000000 ]
+   +0x030 DllBase          : 0x00007ff7`4b7d0000 Void
+   +0x038 EntryPoint       : 0x00007ff7`4b81f294 Void
+   +0x040 SizeOfImage      : 0x8e000
+   +0x048 FullDllName      : _UNICODE_STRING "F:\工作常用软件汇总\08.工具包集合收集\吾爱破解工具包2.0\吾爱破解工具包\Tools\Debuggers\WinDbg\x64\windbg.exe"
+   +0x058 BaseDllName      : _UNICODE_STRING "windbg.exe"
+   +0x068 FlagGroup        : [4]  "???"
+   +0x068 Flags            : 0x22cc
+   +0x068 PackagedBinary   : 0y0
+   +0x068 MarkedForRemoval : 0y0
+   +0x068 ImageDll         : 0y1
+   +0x068 LoadNotificationsSent : 0y1
+   +0x068 TelemetryEntryProcessed : 0y0
+   +0x068 ProcessStaticImport : 0y0
+   +0x068 InLegacyLists    : 0y1
+   +0x068 InIndexes        : 0y1
+   +0x068 ShimDll          : 0y0
+   +0x068 InExceptionTable : 0y1
+   +0x068 ReservedFlags1   : 0y00
+   +0x068 LoadInProgress   : 0y0
+   +0x068 LoadConfigProcessed : 0y1
+   +0x068 EntryProcessed   : 0y0
+   +0x068 ProtectDelayLoad : 0y0
+   +0x068 ReservedFlags3   : 0y00
+   +0x068 DontCallForThreads : 0y0
+   +0x068 ProcessAttachCalled : 0y0
+   +0x068 ProcessAttachFailed : 0y0
+   +0x068 CorDeferredValidate : 0y0
+   +0x068 CorImage         : 0y0
+   +0x068 DontRelocate     : 0y0
+   +0x068 CorILOnly        : 0y0
+   +0x068 ReservedFlags5   : 0y000
+   +0x068 Redirected       : 0y0
+   +0x068 ReservedFlags6   : 0y00
+   +0x068 CompatDatabaseProcessed : 0y0
+   +0x06c ObsoleteLoadCount : 0xffff
+   +0x06e TlsIndex         : 0
+   +0x070 HashLinks        : _LIST_ENTRY [ 0x00007ffb`16245ff0 - 0x00007ffb`16245ff0 ]
+   +0x080 TimeDateStamp    : 0x5391bf93
+   +0x088 EntryPointActivationContext : (null) 
+   +0x090 Lock             : (null) 
+   +0x098 DdagNode         : 0x000000b5`02d625c0 _LDR_DDAG_NODE
+   +0x0a0 NodeModuleLink   : _LIST_ENTRY [ 0x000000b5`02d625c0 - 0x000000b5`02d625c0 ]
+   +0x0b0 LoadContext      : 0x000000b5`02c2f5e0 _LDRP_LOAD_CONTEXT
+   +0x0b8 ParentDllBase    : (null) 
+   +0x0c0 SwitchBackContext : 0x00007ffb`16201b74 Void
+   +0x0c8 BaseAddressIndexNode : _RTL_BALANCED_NODE
+   +0x0e0 MappingInfoIndexNode : _RTL_BALANCED_NODE
+   +0x0f8 OriginalBase     : 0x00007ff7`4b7d0000
+   +0x100 LoadTime         : _LARGE_INTEGER 0x01d1aa9d`69b062b1
+   +0x108 BaseNameHashValue : 0x1629e5b1
+   +0x10c LoadReason       : 4 ( LoadReasonDynamicLoad )
+   +0x110 ImplicitPathOptions : 0
+   +0x114 ReferenceCount   : 2
+0:000> dt 0x000000b5`02d622a0 _LDR_DATA_TABLE_ENTRY
+ntdll!_LDR_DATA_TABLE_ENTRY
+   +0x000 InLoadOrderLinks : _LIST_ENTRY [ 0x000000b5`02d629a0 - 0x000000b5`02d62470 ]
+   +0x010 InMemoryOrderLinks : _LIST_ENTRY [ 0x000000b5`02d629b0 - 0x000000b5`02d62480 ]
+   +0x020 InInitializationOrderLinks : _LIST_ENTRY [ 0x000000b5`02d62f80 - 0x00007ffb`162461f0 ]
+   +0x030 DllBase          : 0x00007ffb`16100000 Void
+   +0x038 EntryPoint       : (null) 
+   +0x040 SizeOfImage      : 0x1c2000
+   +0x048 FullDllName      : _UNICODE_STRING "C:\Windows\SYSTEM32\ntdll.dll"
+   +0x058 BaseDllName      : _UNICODE_STRING "ntdll.dll"
+   +0x068 FlagGroup        : [4]  "???"
+   +0x068 Flags            : 0xa2c4
+   +0x068 PackagedBinary   : 0y0
+   +0x068 MarkedForRemoval : 0y0
+   +0x068 ImageDll         : 0y1
+   +0x068 LoadNotificationsSent : 0y0
+   +0x068 TelemetryEntryProcessed : 0y0
+   +0x068 ProcessStaticImport : 0y0
+   +0x068 InLegacyLists    : 0y1
+   +0x068 InIndexes        : 0y1
+   +0x068 ShimDll          : 0y0
+   +0x068 InExceptionTable : 0y1
+   +0x068 ReservedFlags1   : 0y00
+   +0x068 LoadInProgress   : 0y0
+   +0x068 LoadConfigProcessed : 0y1
+   +0x068 EntryProcessed   : 0y0
+   +0x068 ProtectDelayLoad : 0y1
+   +0x068 ReservedFlags3   : 0y00
+   +0x068 DontCallForThreads : 0y0
+   +0x068 ProcessAttachCalled : 0y0
+   +0x068 ProcessAttachFailed : 0y0
+   +0x068 CorDeferredValidate : 0y0
+   +0x068 CorImage         : 0y0
+   +0x068 DontRelocate     : 0y0
+   +0x068 CorILOnly        : 0y0
+   +0x068 ReservedFlags5   : 0y000
+   +0x068 Redirected       : 0y0
+   +0x068 ReservedFlags6   : 0y00
+   +0x068 CompatDatabaseProcessed : 0y0
+   +0x06c ObsoleteLoadCount : 0xffff
+   +0x06e TlsIndex         : 0
+   +0x070 HashLinks        : _LIST_ENTRY [ 0x00007ffb`16246020 - 0x00007ffb`16246020 ]
+   +0x080 TimeDateStamp    : 0x56ad9704
+   +0x088 EntryPointActivationContext : (null) 
+   +0x090 Lock             : (null) 
+   +0x098 DdagNode         : 0x000000b5`02d623f0 _LDR_DDAG_NODE
+   +0x0a0 NodeModuleLink   : _LIST_ENTRY [ 0x000000b5`02d623f0 - 0x000000b5`02d623f0 ]
+   +0x0b0 LoadContext      : (null) 
+   +0x0b8 ParentDllBase    : (null) 
+   +0x0c0 SwitchBackContext : (null) 
+   +0x0c8 BaseAddressIndexNode : _RTL_BALANCED_NODE
+   +0x0e0 MappingInfoIndexNode : _RTL_BALANCED_NODE
+   +0x0f8 OriginalBase     : 0x00007ffb`16100000
+   +0x100 LoadTime         : _LARGE_INTEGER 0x01d1aa9d`69b062b1
+   +0x108 BaseNameHashValue : 0xf46857d4
+   +0x10c LoadReason       : 0 ( LoadReasonStaticDependency )
+   +0x110 ImplicitPathOptions : 0
+   +0x114 ReferenceCount   : 2
+0:000> dt 0x000000b5`02d629a0 _LDR_DATA_TABLE_ENTRY
+ntdll!_LDR_DATA_TABLE_ENTRY
+   +0x000 InLoadOrderLinks : _LIST_ENTRY [ 0x000000b5`02d62f60 - 0x000000b5`02d622a0 ]
+   +0x010 InMemoryOrderLinks : _LIST_ENTRY [ 0x000000b5`02d62f70 - 0x000000b5`02d622b0 ]
+   +0x020 InInitializationOrderLinks : _LIST_ENTRY [ 0x00007ffb`162461f0 - 0x000000b5`02d62f80 ]
+   +0x030 DllBase          : 0x00007ffb`15a40000 Void
+   +0x038 EntryPoint       : 0x00007ffb`15a52e30 Void
+   +0x040 SizeOfImage      : 0xad000
+   +0x048 FullDllName      : _UNICODE_STRING "C:\Windows\system32\KERNEL32.DLL"
+   +0x058 BaseDllName      : _UNICODE_STRING "KERNEL32.DLL"
+   +0x068 FlagGroup        : [4]  "???"
+   +0x068 Flags            : 0xca2cc
+   +0x068 PackagedBinary   : 0y0
+   +0x068 MarkedForRemoval : 0y0
+   +0x068 ImageDll         : 0y1
+   +0x068 LoadNotificationsSent : 0y1
+   +0x068 TelemetryEntryProcessed : 0y0
+   +0x068 ProcessStaticImport : 0y0
+   +0x068 InLegacyLists    : 0y1
+   +0x068 InIndexes        : 0y1
+   +0x068 ShimDll          : 0y0
+   +0x068 InExceptionTable : 0y1
+   +0x068 ReservedFlags1   : 0y00
+   +0x068 LoadInProgress   : 0y0
+   +0x068 LoadConfigProcessed : 0y1
+   +0x068 EntryProcessed   : 0y0
+   +0x068 ProtectDelayLoad : 0y1
+   +0x068 ReservedFlags3   : 0y00
+   +0x068 DontCallForThreads : 0y1
+   +0x068 ProcessAttachCalled : 0y1
+   +0x068 ProcessAttachFailed : 0y0
+   +0x068 CorDeferredValidate : 0y0
+   +0x068 CorImage         : 0y0
+   +0x068 DontRelocate     : 0y0
+   +0x068 CorILOnly        : 0y0
+   +0x068 ReservedFlags5   : 0y000
+   +0x068 Redirected       : 0y0
+   +0x068 ReservedFlags6   : 0y00
+   +0x068 CompatDatabaseProcessed : 0y0
+   +0x06c ObsoleteLoadCount : 0xffff
+   +0x06e TlsIndex         : 0
+   +0x070 HashLinks        : _LIST_ENTRY [ 0x000000b5`02d6da10 - 0x00007ffb`16246000 ]
+   +0x080 TimeDateStamp    : 0x559f38ad
+   +0x088 EntryPointActivationContext : (null) 
+   +0x090 Lock             : (null) 
+   +0x098 DdagNode         : 0x000000b5`02d62af0 _LDR_DDAG_NODE
+   +0x0a0 NodeModuleLink   : _LIST_ENTRY [ 0x000000b5`02d62af0 - 0x000000b5`02d62af0 ]
+   +0x0b0 LoadContext      : (null) 
+   +0x0b8 ParentDllBase    : (null) 
+   +0x0c0 SwitchBackContext : 0x00007ffb`16201b94 Void
+   +0x0c8 BaseAddressIndexNode : _RTL_BALANCED_NODE
+   +0x0e0 MappingInfoIndexNode : _RTL_BALANCED_NODE
+   +0x0f8 OriginalBase     : 0x00007ffb`15a40000
+   +0x100 LoadTime         : _LARGE_INTEGER 0x01d1aa9d`69b062b1
+   +0x108 BaseNameHashValue : 0x536cd652
+   +0x10c LoadReason       : 4 ( LoadReasonDynamicLoad )
+   +0x110 ImplicitPathOptions : 0x800
+   +0x114 ReferenceCount   : 2
